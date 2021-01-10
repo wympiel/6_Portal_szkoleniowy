@@ -5,12 +5,15 @@
     <title>Rejestracja</title>
 </head>
 <body>
+
+{% load crispy_forms_tags %}
+
     <div class="content-section">
         <form method="POST">
             {%  csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Dołącz do nas!</legend>
-                {{  form.as_p }}
+                {{  form|crispy }}
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Zarejestruj się</button>
