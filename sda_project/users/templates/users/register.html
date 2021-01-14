@@ -8,20 +8,20 @@
 
 {% load crispy_forms_tags %}
 
-    <div class="content-section">
+    <div >
         <form method="POST">
             {%  csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Dołącz do nas!</legend>
+            <fieldset>
+                <legend >Dołącz do nas!</legend>
                 {{  form|crispy }}
             </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Zarejestruj się</button>
+            <div>
+                <button type="submit">Zarejestruj się</button>
             </div>
         </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Masz już konto?<a class="ml-2" href="{% url 'login' %}">Zaloguj się</a>
+        <div>
+            <small>
+                Masz już konto?<a href="{% url 'login' %}">Zaloguj się</a>
             </small>
         </div>
     </div>
