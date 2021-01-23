@@ -30,6 +30,7 @@ urlpatterns = [
     path('calendar2/', include('calendar2.urls')),# chyba to trzeba poprawić
     path('profile/', user_views.profile, name='profile'),
 
+
     # Marlena portal
      path('home/', home_view, name='home'),
      path('calendar/', calendar_view, name='calendar'),
