@@ -32,7 +32,9 @@ footer {
     font-size: 10px;
     text-align: center;
     border-radius: 10px;
-
+    position: fixed;
+    bottom:0;
+    min-width: 500px;
 }
 
 .option{
@@ -47,3 +49,5 @@ text-decoration: none;
 background-color: #000000;
 color: white;
 }
+
+

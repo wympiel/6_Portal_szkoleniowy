@@ -1,22 +1,15 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
 {% extends 'cal/base.html' %}
-
+<body>
 {% block content %}
-
-<div>
-	<nav>
-		<center>
-        <a class="btn btn-info center" href="{% url 'home' %}" >Home</a>
-        <a class="btn btn-info center" href="{% url 'training' %}">szkolenia</a>
-        <a class="btn btn-info center" href="{% url 'downloads' %}">do pobrania</a>
-        <a class="btn btn-info center" href="{% url 'logout' %}">Wyloguj</a>
-		</center>
-	</nav>
-</div>
-
 <div class="clearfix">
 	<a class="btn btn-info left" href="{% url 'calendar2:index' %}?{{ prev_month }}"> Miesiąc poprzedni </a>
 	<a class="btn btn-info right" href="{% url 'calendar2:index' %}?{{ next_month }}"> Miesiąc następny </a>
+	{{ calendar }}
 </div>
-
-{{ calendar }}
 {% endblock %}
+</body>
+</html>
