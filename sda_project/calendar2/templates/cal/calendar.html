@@ -6,6 +6,15 @@
 	<a class="btn btn-info left" href="{% url 'calendar2:index' %}?{{ prev_month }}"> Miesiąc poprzedni </a>
 	<a class="btn btn-info right" href="{% url 'calendar2:index' %}?{{ next_month }}"> Miesiąc następny </a>
 </div>
-
+<div>
+	<nav>
+    <ul>
+        <li><a href="{% url 'home' %}" >Home</a></li>
+        <li><a href="{% url 'training' %}">szkolenia</a></li>
+        <li><a href="{% url 'downloads' %}">do pobrania</a></li>
+        <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+	</ul>
+	</nav>
+</div>
 {{ calendar }}
 {% endblock %}
