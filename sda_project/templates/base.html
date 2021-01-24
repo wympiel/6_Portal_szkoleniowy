@@ -1,28 +1,35 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 {% load static %}
 <head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 
-
-
-    <title>Portal szkoleniowy</title>
-
-{% block content%}
-
-<h1>Portal szkoleniowy</h1>
-    {% include "navbar.html" %}
-
-{% endblock %}
-
+  <title>Portal szkoleniowy</title>
+<link rel="shortcut icon" type="image/png" href="{% static 'css/favicon.png' %}"/>
 </head>
+
 <body>
+<div class="container">
+    <div id="nav">
+            <div class="option"><a href="{% url 'home' %}">Strona Główna</a> </div>
+            <div class="option"><a href="#">Kalendarz</a> </div>
+            <div class="option"><a href="{% url 'training' %}">Szkolenia</a></div>
+            <div class="option"><a href="#">Testy</a></div>
+            <div class="option"><a href="{% url 'downloads' %}">Do pobrania</a></div>
+            <div class="option"><a href="{% url 'contact' %}">Kontakt</a></div>
+            <div class="option"><a href="{% url 'logout' %}" >Wyloguj się</a></div>
+            <div style="clear:both"></div>
+    </div>
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
 
-
-
+    <footer>Projekt zrealizowany w ramach kursu Software Development Academy - Python od Podstaw, 2021 r.</footer>
+</div>
 </body>
-
 </html>

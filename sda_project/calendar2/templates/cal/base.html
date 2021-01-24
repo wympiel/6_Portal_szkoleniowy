@@ -1,31 +1,35 @@
+<!doctype html>
+<html lang="en">
 {% load static %}
-<html lang="pl">
-
 <head>
-  <!-- Required meta tags -->
+
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'cal/css/style.css' %}">
-  <title>Django Calendar App</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+  <title>Portal szkoleniowy</title>
+<link rel="shortcut icon" type="image/png" href="{% static 'css/favicon.png' %}"/>
 </head>
+
 <body>
+<div class="container">
+    <div id="nav">
+            <div class="option"><a href="{% url 'home' %}">Strona Główna</a> </div>
+            <div class="option"><a href="#">Kalendarz</a> </div>
+            <div class="option"><a href="{% url 'training' %}">Szkolenia</a></div>
+            <div class="option"><a href="#">Testy</a></div>
+            <div class="option"><a href="{% url 'downloads' %}">Do pobrania</a></div>
+            <div class="option"><a href="{% url 'contact' %}">Kontakt</a></div>
+            <div class="option"><a href="{% url 'logout' %}" >Wyloguj się</a></div>
+            <div style="clear:both"></div>
+    </div>
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
 
-  {% block content %}
-  {% endblock %}
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
-  {% block script %}
-  {% endblock %}
+    <footer>Projekt zrealizowany w ramach kursu Software Development Academy - Python od Podstaw, 2021 r.</footer>
+</div>
 </body>
 </html>
